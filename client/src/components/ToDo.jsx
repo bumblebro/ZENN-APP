@@ -25,26 +25,18 @@ function ToDo() {
     setTodo(data);
     console.log(todo);
   };
-  // const handleRemoved = (name) => {
-  //   const data = todo.map((e) => {
-  //     console.log(name);
-  //     if (e.name == name) {
-  //       e.type = "Removed";
-  //     }
-  //     return e;
-  //   });
-  //   setTodo(data);
-  //   console.log(todo);
-  // };
 
   return (
-    <div className="w-4/12 flex flex-col gap-6">
-      <h1 className="">My Tasks</h1>
-      <div className="flex gap-4">
+    <div className=" flex flex-col gap-6 bg-[#cdedff] rounded-lg px-3 ">
+      <h1 className="text-2xl font-medium text-gray-800 pl-4 pt-4">My Tasks</h1>
+      <div className="flex justify-around">
         <button
           onClick={() => {
             SetState("Active");
           }}
+          className={`font-medium text-xl text-slate-700 px-4 py-1 rounded-full ${
+            state == "Active" ? "bg-white" : ""
+          } `}
         >
           Active
         </button>
@@ -52,6 +44,9 @@ function ToDo() {
           onClick={() => {
             SetState("Completed");
           }}
+          className={`font-medium text-xl text-slate-700 px-4 py-1 rounded-full ${
+            state == "Completed" ? "bg-white" : ""
+          } `}
         >
           Completed
         </button>
@@ -59,11 +54,14 @@ function ToDo() {
           onClick={() => {
             SetState("AllTasks");
           }}
+          className={`font-medium text-xl text-slate-700 px-4 py-1 rounded-full ${
+            state == "AllTasks" ? "bg-white" : ""
+          } `}
         >
           All Tasks
         </button>
       </div>
-      <div className="flex flex-col">
+      <form className="flex flex-col">
         <input
           type="text"
           placeholder="Add task here
@@ -72,64 +70,81 @@ function ToDo() {
           onChange={(e) => {
             setCurrentData(e.target.value);
           }}
+          className="bg-white px-6 py-3 mx-3 rounded-lg border-none0 focus:outline-none "
         />
         <button
-          className="flex justify-start"
-          onClick={() => {
+          className="flex justify-start text-3xl pl-4 pt-2"
+          onClick={(e) => {
+            e.preventDefault();
             if (currentdata !== "") {
               setTodo([...todo, { name: currentdata, type: "Active" }]);
             }
             setCurrentData("");
+            SetState("Active");
           }}
         >
           +
         </button>
-      </div>
+      </form>
       {todo.map((e) => {
         if (state == "Active" || state == "Completed") {
           if (e.type == state)
             return (
-              <div key={e.name} className="flex flex-row justify-between">
-                <div>{e.name}</div>
-                {state == "Active" ? (
+              <div
+                key={e.name}
+                className="flex flex-row justify-between   w-11/12 mx-auto gap-3 items-center"
+              >
+                <div className="w-full bg-white rounded-md px-2 py-1">
+                  {e.name}
+                </div>
+                <div className="flex gap-8">
+                  {state == "Active" ? (
+                    <div
+                      onClick={() => {
+                        handleCompleted(e.name);
+                      }}
+                    >
+                      <Check size={24} />
+                    </div>
+                  ) : null}
+
                   <div
                     onClick={() => {
-                      handleCompleted(e.name);
+                      handleDelete(e.name);
                     }}
                   >
-                    <Check size={32} />
+                    <X size={24} />
                   </div>
-                ) : null}
-
-                <div
-                  onClick={() => {
-                    handleDelete(e.name);
-                  }}
-                >
-                  <X size={32} />
                 </div>
               </div>
             );
         }
         if (state == "AllTasks") {
           return (
-            <div key={e.name} className="flex flex-row justify-between">
-              <div>{e.name}</div>
-              {e.type == "Active" ? (
+            <div
+              key={e.name}
+              className="flex flex-row justify-between   w-11/12 mx-auto gap-3 items-center"
+            >
+              <div className="w-full bg-white rounded-md px-2 py-1">
+                {e.name}
+              </div>{" "}
+              <div className="flex gap-8">
+                {e.type == "Active" ? (
+                  <div
+                    onClick={() => {
+                      handleCompleted(e.name);
+                    }}
+                  >
+                    <Check size={24} />
+                  </div>
+                ) : null}
                 <div
                   onClick={() => {
-                    handleCompleted(e.name);
+                    handleDelete(e.name);
                   }}
                 >
-                  <Check size={32} />
-                </div>
-              ) : null}
-              <div
-                onClick={() => {
-                  handleDelete(e.name);
-                }}
-              >
-                <X size={32} />
+                  <X size={24} />
+                </div>{" "}
               </div>
             </div>
           );

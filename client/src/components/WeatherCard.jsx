@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 
 function WeatherCard() {
   const [weatherData, setWeatherData] = useState({});
+  const [currentLocation, setCurrentLocation] = useState({});
+  const [currentTime, setCurrentTime] = useState({});
 
   useEffect(() => {
     const weather = async () => {
@@ -10,18 +12,58 @@ function WeatherCard() {
         let lat = position.coords.latitude;
         let lon = position.coords.longitude;
         const fetchdata = await axios.get(
-          `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,is_day,precipitation`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=dc5bfbbb3ad424b4740f45edd72da0a2`
         );
-        setWeatherData(await fetchdata.data.current);
+        const current = await axios.get(
+          `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=dc5bfbbb3ad424b4740f45edd72da0a2`
+        );
+        setCurrentLocation({
+          country: current.data[0].country,
+          state: current.data[0].state,
+          city: current.data[0].name,
+        });
+
+        const data = await fetchdata.data;
+        console.log(data);
+        setWeatherData({
+          temperature: data.main.temp,
+          weather: data.weather[0].main,
+        });
       });
     };
     weather();
   }, []);
-  console.log(weatherData);
+
+  useEffect(() => {
+    const time = setInterval(() => {
+      const date = new Date();
+      setCurrentTime({
+        time: date.toLocaleTimeString(),
+        date: date.toDateString(),
+      });
+    }, 1000);
+    return () => clearInterval(time);
+  }, []);
+
   return (
-    <div>
-      <h1>{weatherData.time}</h1>
-      <h1>{weatherData.temperature_2m}</h1>
+    <div
+      className={`flex flex-col gap-3 bg-gradient-to-r from-slate-300 to-slate-500 rounded-lg h-36 justify-center pl-6 `}
+    >
+      <div className="flex gap-2">
+        <h1 className="text-4xl  font-semibold">
+          {(weatherData.temperature - 273.15).toFixed()}°
+        </h1>
+        <div className="flex flex-col justify-end font-light">
+          <h1>{weatherData.weather}</h1>
+        </div>
+      </div>
+      <h1 className="font-extralight">
+        {currentLocation.city}, {currentLocation.state}
+      </h1>
+      <div className="flex gap-4">
+        {" "}
+        <h1>{currentTime.time}</h1> <h1>{currentTime.date}</h1>
+      </div>
     </div>
   );
 }
