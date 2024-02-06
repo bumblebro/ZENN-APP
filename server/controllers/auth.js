@@ -1,6 +1,9 @@
 import User from "../models/user.js";
+import jwt from "jsonwebtoken";
 
-export const login = async (req, res) => {
+const SECRETKEY = "Shreyas";
+
+export const register = async (req, res) => {
   const { username, password, email } = await req.body;
   const userdata = await User.findOne({ email: email });
 
@@ -9,9 +12,17 @@ export const login = async (req, res) => {
   }
   const user = new User({ username, email, password });
   const userdat = await user.save();
-  res.status(200).json({ message: "Completed" });
+  const token = jwt.sign({ email }, SECRETKEY);
+  res.status(200).json({
+    message: "Registration succesfull",
+    token,
+    id: userdat._id,
+    username,
+  });
 };
 
-export const register = async (req, res) => {
+export const login = async (req, res) => {
   const { email, password } = req.body;
+  const data = User.findOne({ email });
+  console.log(data);
 };

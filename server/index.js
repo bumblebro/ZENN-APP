@@ -1,11 +1,12 @@
 import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/auth.js";
+import cors from "cors";
 
 const app = express();
 app.use(express.json());
-
-app.use("", router);
+app.use(cors());
+app.use("/auth", router);
 
 mongoose
   .connect(
