@@ -1,12 +1,11 @@
 import express from "express";
 import mongoose from "mongoose";
+import router from "./routes/auth.js";
 
 const app = express();
 app.use(express.json());
 
-app.get("/hello", (req, res) => {
-  res.send("Hello");
-});
+app.use("", router);
 
 mongoose
   .connect(
