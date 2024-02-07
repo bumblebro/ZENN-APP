@@ -1,12 +1,13 @@
 import { Check, X } from "@phosphor-icons/react";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 function ToDo() {
   const [todo, setTodo] = useState([]);
   const [state, SetState] = useState("Active");
   const [currentdata, setCurrentData] = useState("");
-  const [timer, setTimer] = useState(0);
-  const [isRunning, setIsRunning] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [isPaused, setIsPaused] = useState(true);
+  const [time, setTime] = useState(0);
 
   const handleDelete = (name) => {
     const data = todo.filter((e) => {
@@ -15,7 +16,7 @@ function ToDo() {
     });
     setTodo(data);
   };
-  
+
   const handleCompleted = (name) => {
     const data = todo.map((e) => {
       console.log(name);
@@ -28,40 +29,34 @@ function ToDo() {
     console.log(todo);
   };
 
+  useEffect(() => {
+    let interval = null;
+
+    if (isActive && isPaused === false) {
+      interval = setInterval(() => {
+        setTime((time) => time + 10);
+      }, 10);
+    } else {
+      clearInterval(interval);
+    }
+    return () => {
+      clearInterval(interval);
+    };
+  }, [isActive, isPaused]);
+
   const handleStart = () => {
-    if (isRunning) return;
-    setIsRunning(true);
-    timeInterval.current = setInterval(() => {
-      setTimer((prev) => prev + 1);
-    }, 10);
+    setIsActive(true);
+    setIsPaused(false);
   };
 
-  const handlePause = () => {
-    if (!isRunning) return;
-    setIsRunning(false);
-    clearInterval(timeInterval.current);
+  const handlePauseResume = () => {
+    setIsPaused(!isPaused);
   };
 
   const handleReset = () => {
-    setIsRunning(false);
-    clearInterval(timeInterval.current);
-    setTimer(0);
+    setIsActive(false);
+    setTime(0);
   };
-
-  const formatTime = (timer) => {
-    const minutes = Math.floor(timer / 6000)
-      .toString()
-      .padStart(2, "0");
-    const seconds = Math.floor(timer / 600)
-      .toString()
-      .padStart(2, "0");
-    const milliseconds = (timer % 100).toString().padStart(3, "0");
-    return { minutes, seconds, milliseconds };
-  };
-
-  let timeInterval = useRef(null);
-
-  const { seconds, minutes, milliseconds } = formatTime(timer);
 
   return (
     <div className=" flex flex-col gap-6 bg-[#cdd5ffb6] rounded-lg px-3 ">
@@ -152,28 +147,40 @@ function ToDo() {
                     <X size={24} />
                   </div>
                   <div className="font-semibold text-xl text-slate-700">
-                    {minutes}:{seconds}:{milliseconds}
+                    {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
+                    {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
+                    {("0" + ((time / 10) % 100)).slice(-2)}
                   </div>
+                  {!isActive ? (
+                    <button
+                      className="bg-green-600 h-9 w-20 text-white font-semibold rounded-full
+                  "
+                      onClick={() => {
+                        handleStart();
+                      }}
+                    >
+                      Start
+                    </button>
+                  ) : (
+                    <button
+                      className="bg-blue-600 h-9 w-20 text-white font-semibold rounded-full
+                "
+                      onClick={() => {
+                        handlePauseResume();
+                      }}
+                    >
+                      {isPaused ? "Resume" : "Pause"}
+                    </button>
+                  )}
+
                   <button
-                    className="bg-green-600 h-9 w-16 text-white font-semibold rounded-full
+                    className="bg-red-600 h-9 w-20 text-white font-semibold rounded-full
                   "
                     onClick={() => {
-                      handleStart();
+                      handleReset();
                     }}
                   >
-                    Start
-                  </button>{" "}
-                  <button
-                    className="bg-blue-600 h-9 w-16 text-white font-semibold rounded-full
-                  "
-                  >
-                    Pause
-                  </button>{" "}
-                  <button
-                    className="bg-red-600 h-9 w-16 text-white font-semibold rounded-full
-                  "
-                  >
-                    Stop
+                    Reset
                   </button>
                 </div>
               </div>
