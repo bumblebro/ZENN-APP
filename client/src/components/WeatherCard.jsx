@@ -47,7 +47,7 @@ function WeatherCard() {
 
   return (
     <div
-      className={`flex flex-col gap-3 bg-gradient-to-r from-slate-300 to-slate-500 rounded-lg h-36 justify-center pl-6 `}
+      className={`flex flex-col gap-3 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl h-36 justify-center pl-6 text-[#ffffff]`}
     >
       <div className="flex gap-2">
         <h1 className="text-4xl  font-semibold">

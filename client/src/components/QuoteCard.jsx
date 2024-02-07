@@ -14,9 +14,9 @@ function QuoteCard() {
   }, []);
 
   return (
-    <div className=" bg-gradient-to-r from-indigo-400 to-cyan-400 text-white px-6 py-6 rounded-lg flex flex-col gap-2">
-      <h1>❝ {quote.quote} ❞</h1>
-      <h2>   -{quote.author}</h2>
+    <div className="bg-[#1f1f1f] text-white px-8 py-6 rounded-3xl flex flex-col gap-2 ">
+      <h1 className="font-semibold">❝ {quote.quote} ❞</h1>
+      <h2 className="font-medium"> - {quote.author}</h2>
     </div>
   );
 }
