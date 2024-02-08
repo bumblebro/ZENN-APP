@@ -1,5 +1,7 @@
 import { Check, X } from "@phosphor-icons/react";
 import { useEffect, useState } from "react";
+import { Timer } from "../store/atom";
+import { useRecoilState } from "recoil";
 
 function ToDo() {
   const [todo, setTodo] = useState([]);
@@ -10,12 +12,16 @@ function ToDo() {
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
 
+  const [TimeCount, setTimeCount] = useRecoilState(Timer);
+
   useEffect(() => {
     let interval = null;
 
     if (isActive && isPaused === false) {
       interval = setInterval(() => {
         setTime((time) => time + 10);
+        setTimeCount(time);
+        console.log(time);
       }, 10);
     } else {
       clearInterval(interval);
@@ -24,6 +30,15 @@ function ToDo() {
       clearInterval(interval);
     };
   }, [isActive, isPaused]);
+
+  // useEffect(() => {
+  //   const timerfunc = setInterval(() => {
+  //     setTimeCount(time);
+  //     console.log(time);
+  //   }, 1000);
+  //   timerfunc();
+  //   return clearInterval(timerfunc);
+  // }, [time]);
 
   const handleDelete = (name) => {
     const data = todo.filter((e) => {
@@ -100,7 +115,7 @@ function ToDo() {
   };
 
   return (
-    <div className=" flex flex-col gap-6 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl  px-3 ">
+    <div className=" flex flex-col gap-6 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl  px-3 hover:shadow-2xl hover:shadow-[#d1ff02] hover:shadow-inner">
       <h1 className="text-2xl font-extrabold text-white pl-4 pt-4">My Tasks</h1>
       <div className="flex justify-start pl-3">
         <button
@@ -143,7 +158,7 @@ function ToDo() {
           onChange={(e) => {
             setCurrentData(e.target.value);
           }}
-          className="bg-white px-6 py-3 mx-3 rounded-lg border-none0 focus:outline-none "
+          className="bg-slate-200   px-6 py-3 mx-3 rounded-lg border-none0 focus:outline-none  "
         />
         <button
           className="flex justify-start text-3xl pl-4 pt-2 text-white"
@@ -203,7 +218,7 @@ function ToDo() {
                     <X size={24} />
                   </div>
                   {!e.timer.active ? (
-                    !activeclock && state == "Active"  ? (
+                    !activeclock && state == "Active" ? (
                       <button
                         className="bg-green-600 h-9 w-32 text-white font-semibold rounded-full
                   "

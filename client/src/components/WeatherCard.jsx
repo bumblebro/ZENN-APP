@@ -51,8 +51,9 @@ function WeatherCard() {
     >
       <div className="flex gap-2">
         <h1 className="text-4xl  font-semibold">
-          {(weatherData.temperature - 273.15).toFixed()}°
+          {(weatherData.temperature - 273.15).toFixed()}
         </h1>
+        <div className="text-4xl ">°</div>
         <div className="flex flex-col justify-end font-light">
           <h1>{weatherData.weather}</h1>
         </div>

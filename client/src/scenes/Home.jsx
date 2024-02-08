@@ -1,4 +1,5 @@
 import AmbientCard from "../components/AmbientCard.jsx";
+import Clock from "../components/Clock.jsx";
 import QuoteCard from "../components/QuoteCard.jsx";
 import ToDo from "../components/ToDo.jsx";
 import WeatherCard from "../components/WeatherCard.jsx";
@@ -33,14 +34,14 @@ opacity: 0.2;
       </div>
 
       <div className="flex gap-3">
-        <div className="flex flex-col gap-3 w-full">
+        <div className="flex flex-col justify-between w-full gap-3">
           {" "}
           <WeatherCard />
           <QuoteCard />
         </div>{" "}
         <div className="flex gap-3">
           <AmbientCard />
-          <AmbientCard />
+          <Clock />
         </div>
       </div>
       <ToDo />
