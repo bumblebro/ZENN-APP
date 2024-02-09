@@ -41,17 +41,17 @@ function Register() {
   };
 
   return (
-    <div className="bg-[#FFFAFA]     bg-cover h-screen w-screen flex flex-col justify-start pt-8 ">
+    <div className="bg-black     bg-cover h-screen w-screen flex flex-col justify-start pt-8 ">
       <div className="flex justify-end gap-3 pt-5 pr-5">
         <Button handleclick={handlelogin} text={"Login"} />
         <Button handleclick={handleregister} text={"Register"} />
       </div>
       <form className="flex flex-col w-3/12 mx-auto  gap-4 ">
-        <h1 className="text-black font-semibold text-2xl flex justify-center ">
+        <h1 className="text-white font-semibold text-2xl flex justify-center ">
           Register
         </h1>
         <input
-          className="bg-white border-solid border-black border-2 bg-opacity-60 px-4 py-2 rounded-md text-black"
+          className="bg-white border-solid border-black border-2  px-4 py-2 rounded-md text-black"
           type="text"
           placeholder="Enter Name"
           onChange={(e) => {

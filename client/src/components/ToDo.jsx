@@ -11,17 +11,24 @@ function ToDo() {
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
   const [time, setTime] = useState(0);
-
   const [TimeCount, setTimeCount] = useRecoilState(Timer);
 
   useEffect(() => {
-    let interval = null;
+    if (TimeCount.active) {
+      setIsActive(true);
+      setIsPaused(false);
+      return;
+    }
+    if (TimeCount.active == false) {
+      setIsPaused(!isPaused);
+    }
+  }, [TimeCount]);
 
+  useEffect(() => {
+    let interval = null;
     if (isActive && isPaused === false) {
       interval = setInterval(() => {
         setTime((time) => time + 10);
-        setTimeCount(time);
-        console.log(time);
       }, 10);
     } else {
       clearInterval(interval);
@@ -31,14 +38,16 @@ function ToDo() {
     };
   }, [isActive, isPaused]);
 
-  // useEffect(() => {
-  //   const timerfunc = setInterval(() => {
-  //     setTimeCount(time);
-  //     console.log(time);
-  //   }, 1000);
-  //   timerfunc();
-  //   return clearInterval(timerfunc);
-  // }, [time]);
+  useEffect(() => {
+    setTimeCount((t) => {
+      return {
+        ...t,
+        hours: ("0" + Math.floor(time / 3600000)).slice(-2),
+        minute: ("0" + Math.floor((time / 60000) % 60)).slice(-2),
+        seconds: ("0" + Math.floor((time / 1000) % 60)).slice(-2),
+      };
+    });
+  }, [time]);
 
   const handleDelete = (name) => {
     const data = todo.filter((e) => {
@@ -107,6 +116,9 @@ function ToDo() {
 
   const handlePauseResume = () => {
     setIsPaused(!isPaused);
+    setTimeCount((e) => {
+      return { ...e, active: isPaused };
+    });
   };
 
   const handleReset = () => {
@@ -233,9 +245,10 @@ function ToDo() {
                   ) : (
                     <>
                       <div className="font-semibold text-xl text-white">
+                        {("0" + Math.floor(time / 3600000)).slice(-2)}:
                         {("0" + Math.floor((time / 60000) % 60)).slice(-2)}:
-                        {("0" + Math.floor((time / 1000) % 60)).slice(-2)}:
-                        {("0" + ((time / 10) % 100)).slice(-2)}
+                        {("0" + Math.floor((time / 1000) % 60)).slice(-2)}
+                        {/* {("0" + ((time / 10) % 100)).slice(-2)} */}
                       </div>
                       {!isActive ? (
                         <div className="flex gap-8">
@@ -253,6 +266,7 @@ function ToDo() {
                             className="bg-green-600 h-9 w-20 text-white font-semibold rounded-full
                   "
                             onClick={() => {
+                              setTimeCount({ ...TimeCount, active: true });
                               handleStart();
                             }}
                           >
@@ -279,7 +293,6 @@ function ToDo() {
                           onClick={() => {
                             handlePauseResume();
                             handleAddTimer(e.name);
-                            console.log(e.timer.time);
                           }}
                         >
                           {isPaused ? "Resume" : "Pause"}
