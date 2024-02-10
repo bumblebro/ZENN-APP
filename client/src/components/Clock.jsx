@@ -1,5 +1,6 @@
 import { useRecoilState } from "recoil";
 import { Timer } from "../store/atom.js";
+import { useState } from "react";
 
 function Clock() {
   const [time, setTime] = useRecoilState(Timer);
@@ -41,6 +42,9 @@ function Clock() {
         <button
           onClick={() => {
             console.log(time.active);
+            if (time.active == null) {
+              return;
+            }
             setTime((time) => {
               return { ...time, active: true };
             });
