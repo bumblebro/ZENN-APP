@@ -9,7 +9,7 @@ function Home() {
     <div className=" bg-[#000000] flex px-6  gap-3 flex-col">
       <div className="flex items-center gap-2">
         <div className="text-white text-3xl font-extrabold pt-3 pl-1">
-          DoIT{" "}
+          Zen-App{" "}
         </div>{" "}
         <svg
           xmlns="http://www.w3.org/2000/svg"
