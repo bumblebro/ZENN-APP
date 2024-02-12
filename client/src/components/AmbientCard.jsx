@@ -175,9 +175,7 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick(
-                  "https://zen-audios.s3.us-east-1.amazonaws.com/audios/birds.mp3?response-content-disposition=inline&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCmFwLXNvdXRoLTEiRjBEAiByLRHex1aBcRR0pvbVD2Z6B7J5yjA4Qe5MPXkUDwpLXwIgM%2FXT5Em326XY8kmvVcJ8JmMyXJuV6zacBk2afzRjOrkq7QIIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw4NDc2MTcyMDQxMzYiDBNeBWkgnwJ44BP4XSrBAt8raS65%2BtfVthe66Mo1ctw5qYiwvwfmSdZyYaSKsN4o9ocfxGuQFpcbCV8la2CCmyPz9yb%2BwNGOjcn%2Fh5K6DbBuB8Lj1cl8BspCKFwWzwBwq8Xkgpgtiha6Ids8jpYaZ8a3YVjvw6MimGc7yEHze3wSBiTOjGGu40v1hnjP%2FLZF4suBKqxRgHig0C0N5HPmjEO7wFOlx%2FVaQGS5de04qRXUtJSaM8%2B%2BRTxFpBWrlbrznB5jgJ6HAvmldJUGMVZOboO6Zw2W9WftkQiIWgUsLWi%2BPqoo7l3U9POy9kYXlJkCTJYTKhoCDFuoYzs%2Bp31HNn%2BUxviQYpVHATIdpb65jbx7sPugTou3oU2poZ9%2B0kKtuKeEF6JLA8XmkYbCDs6MY6xe%2FUWyWIgWZKFV%2FfeWKq1wK9pMRIe34oUrsVc7WHYxBzDxjoKuBjq0ApqEgj9P%2FAvN1GC32FcT1UbJ7e122pl0g%2B%2B3C07n0R1VzApZy3uJhm3wN4PqqFDFy8D0J5XwqZ945EyMmomhlSP%2FKwrVpTixp6ldEG18o7xpjgQ1qqZKjNDZh2%2B6Fa9hbflIIstCi3ra%2ByXsp5K1WwcYt%2BoGUi8Tev7NR4A%2FjJ2Ch5RpCNicgegb9c80zLoGw6nmlhELOGtaCFkIa6vtukkx4MGhDksNVlzOjiyi4agpIJKJUzO1GM6ylL7NW7yOzbNsz%2FgobRIt2LZJuN5xDzPYuS0B%2FHJVMia0NtuEqQBZEO%2FgwbaSc5EtUgkj0izYaUclyKpzKqWuSJq2HeAICB0cHJeP0XzHFWsrgpFcPme3motcLdRWQuj9sg%2FnnwOMTK3GOba30nkjYdPci9MSSVdQrmmG&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20240205T072416Z&X-Amz-SignedHeaders=host&X-Amz-Expires=299&X-Amz-Credential=ASIA4KWPMD6UPELU6HTA%2F20240205%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=40ba47910660f88060f37ca235bedb983b1fbe3be922155bb4f07498f1595a7f"
-                );
+                handleSVGClick("src/assets/audios/birds.mp3");
                 SetActive("birds");
               }}
             >
