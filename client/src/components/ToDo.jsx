@@ -10,7 +10,9 @@ function ToDo() {
   const [activeclock, setActiveClock] = useState(false);
   const [isActive, setIsActive] = useState(false);
   const [isPaused, setIsPaused] = useState(true);
-  const [time, setTime] = useState(0);
+  const [time, setTime] = useState(
+    Number(localStorage.getItem("startTime")) || 0
+  );
   const [TimeCount, setTimeCount] = useRecoilState(Timer);
 
   useEffect(() => {
@@ -29,6 +31,7 @@ function ToDo() {
     if (isActive && isPaused === false) {
       interval = setInterval(() => {
         setTime((time) => time + 10);
+        localStorage.setItem("startTime", time);
       }, 10);
     } else {
       clearInterval(interval);
