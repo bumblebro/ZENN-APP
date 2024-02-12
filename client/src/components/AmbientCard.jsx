@@ -215,7 +215,7 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("https://shorturl.at/fhMN4");
+                handleSVGClick("src/assets/audios/windchime.mp3");
                 SetActive("bells");
               }}
             >
@@ -239,7 +239,7 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/bells.mp3");
+                handleSVGClick("src/assets/audios/windchime.mp3");
                 SetActive("bells");
               }}
             >
@@ -255,7 +255,7 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/leaf.mp3");
+                handleSVGClick("src/assets/audios/insects.mp3");
                 SetActive("leaf");
               }}
             >
@@ -279,7 +279,7 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/leaf.mp3");
+                handleSVGClick("src/assets/audios/insects.mp3");
                 SetActive("leaf");
               }}
             >
