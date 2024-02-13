@@ -15,7 +15,7 @@ function WeatherCard() {
           `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=dc5bfbbb3ad424b4740f45edd72da0a2`
         );
         const current = await axios.get(
-          `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=dc5bfbbb3ad424b4740f45edd72da0a2`
+          `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=dc5bfbbb3ad424b4740f45edd72da0a2`
         );
         setCurrentLocation({
           country: current.data[0].country,
