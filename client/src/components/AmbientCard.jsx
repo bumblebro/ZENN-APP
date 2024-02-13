@@ -1,4 +1,3 @@
-import rain from "../assets/audios/rain.mp3";
 import { useState } from "react";
 
 function AmbientCard() {
@@ -53,7 +52,7 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick({ rain });
+                handleSVGClick("src/assets/audios/rain.mp3");
                 SetActive("rain");
               }}
             >
@@ -77,7 +76,7 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick({ rain });
+                handleSVGClick("src/assets/audios/rain.mp3");
                 SetActive("rain");
               }}
             >
