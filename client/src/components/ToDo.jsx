@@ -223,10 +223,10 @@ function ToDo() {
                   ) : null}
                   <div
                     onClick={() => {
-                      handleDelete(e.name);
                       handleReset();
                       handleDeleteTimer(e.name);
                       setActiveClock(false);
+                      handleDelete(e.name);
                     }}
                     className="text-white"
                   >
@@ -311,7 +311,7 @@ function ToDo() {
           return (
             <div
               key={e.name}
-              className="flex flex-row justify-between   w-full pl-3 mx-auto gap-3 items-center"
+              className="flex flex-row justify-between w-full pl-3 mx-auto gap-3 items-center"
             >
               <div className="w-full h-12 flex items-center text-white pl-6 bg-[#1f1f1f] rounded-md px-2 py-1">
                 {e.name}

@@ -7,8 +7,10 @@ function Clock() {
 
   const currentTime = `${time.hours}:${time.minute}:${time.seconds}`;
   return (
-    <div className="flex flex-col   bg-[#9e67fd] px-10 pt-12 pb-8 rounded-lg  justify-between">
-      <h1 className="pb-2 font-extrabold text-xl text-white ">TIMER</h1>
+    <div
+      className={`flex flex-col   bg-[#9e67fd] px-10 pt-12 pb-8 rounded-lg  justify-between `}
+    >
+      <h1 className="pb-2 font-extrabold text-xl text-white">TIMER</h1>
       {time.active ? (
         <button
           onClick={() => {
