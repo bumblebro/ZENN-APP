@@ -1,5 +1,3 @@
- 
-
 import { useState } from "react";
 
 function AmbientCard() {
@@ -9,7 +7,7 @@ function AmbientCard() {
   const [active, SetActive] = useState("");
 
   const handleSVGClick = (audiofile) => {
-    const audio = new Audio(audiofile);
+    const audio = new Audio(required(audiofile));
 
     if (first == true) {
       SetSelectedSVG(audio);
