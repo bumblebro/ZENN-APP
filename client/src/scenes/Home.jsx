@@ -8,7 +8,7 @@ function Home() {
   return (
     <div className=" bg-[#000000] flex px-6  gap-3 flex-col">
       <div className="flex items-center gap-2">
-        <div className="text-white text-3xl font-extrabold pt-3 pl-1">
+        <div className="text-white text-3xl font-extrabold pt-4 pb-1 pl-1">
           Zen-App{" "}
         </div>{" "}
         <svg
@@ -17,7 +17,7 @@ function Home() {
           height="32"
           fill="#ffffff"
           viewBox="0 0 256 256"
-          style={{ animation: "blink 3s ease-in-out infinite" }}
+          style={{ animation: "blink 10s ease-in-out infinite" }}
         >
           <style>
             {`     @keyframes blink {
@@ -25,7 +25,7 @@ function Home() {
 opacity: 1;
 }
 25%, 75% {
-opacity: 0.2;
+opacity: 0.1;
 }
 }`}
           </style>
