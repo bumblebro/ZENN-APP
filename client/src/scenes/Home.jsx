@@ -33,13 +33,13 @@ function Home() {
         </svg>
       </div>
 
-      <div className="flex gap-3">
-        <div className="flex flex-col justify-between w-full gap-3">
+      <div className="flex gap-3 md:flex-col lg:flex-row flex-col lg:h-6/12">
+        <div className="flex justify-between  gap-3 md:flex-row  lg:flex-col flex-col ">
           {" "}
           <WeatherCard />
           <QuoteCard />
         </div>{" "}
-        <div className="flex gap-3">
+        <div className="flex gap-3 flex-col lg:flex-row md:flex-row justify-around">
           <AmbientCard />
           <Clock />
         </div>

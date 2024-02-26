@@ -49,7 +49,7 @@ function WeatherCard() {
 
   return (
     <div
-      className={`flex items-center justify-between gap-3 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl h-36  px-6 text-[#ffffff] hover:border-[#6868686f]`}
+      className={`flex items-center justify-between gap-3 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl  px-6 py-4 text-[#ffffff] hover:border-[#6868686f] md:w-6/12  lg:w-full h-full `}
     >
       <div className="flex flex-col gap-2 ">
         <div className="flex gap-2">

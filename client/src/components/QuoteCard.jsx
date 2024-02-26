@@ -14,7 +14,7 @@ function QuoteCard() {
   }, []);
 
   return (
-    <div className="bg-[#1f1f1f] text-white px-8 py-6 rounded-3xl flex flex-col gap-3  ">
+    <div className="bg-[#1f1f1f] px-6 py-4 text-white  rounded-3xl flex flex-col gap-3 md:w-6/12 md:h-full lg:w-full h-full">
       <h1 className="font-semibold">❝ {quote.quote} ❞</h1>
       <h2 className="font-medium"> - {quote.author}</h2>
     </div>
