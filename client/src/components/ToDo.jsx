@@ -207,7 +207,7 @@ function ToDo() {
                 <div className="w-full h-auto flex items-center text-white pl-6 bg-[#1f1f1f] rounded-md px-2 py-1 overflow-auto no-scrollbar ">
                   {e.name}
                 </div>
-                <div className="flex gap-8 items-center">
+                <div className="flex gap-2 sm:gap-8 items-center">
                   {state == "Active" ? (
                     <div
                       onClick={() => {
@@ -254,7 +254,7 @@ function ToDo() {
                         {/* {("0" + ((time / 10) % 100)).slice(-2)} */}
                       </div>
                       {!isActive ? (
-                        <div className="flex gap-8">
+                        <div className="flex gap-2 sm:gap-8">
                           <button
                             className="bg-red-600 h-9 w-20 text-white font-semibold rounded-full
                   "
