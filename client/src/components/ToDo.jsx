@@ -132,12 +132,12 @@ function ToDo() {
   return (
     <div className=" flex flex-col gap-6 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl  sm:px-3 hover:shadow-2xl hover:shadow-[#d1ff02] hover:shadow-inner">
       <h1 className="text-2xl font-extrabold text-white pl-4 pt-4">My Tasks</h1>
-      <div className="pl-3">
+      <div className="px-3">
         <button
           onClick={() => {
             SetState("Active");
           }}
-          className={`font-bold text-xl  px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
             state == "Active" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
@@ -147,7 +147,7 @@ function ToDo() {
           onClick={() => {
             SetState("Completed");
           }}
-          className={`font-bold text-xl px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
             state == "Completed" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
@@ -157,7 +157,7 @@ function ToDo() {
           onClick={() => {
             SetState("AllTasks");
           }}
-          className={`font-bold text-xl px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
             state == "AllTasks" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
