@@ -137,7 +137,7 @@ function ToDo() {
           onClick={() => {
             SetState("Active");
           }}
-          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3.5 sm:px-4 py-1 rounded-full ${
             state == "Active" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
@@ -147,7 +147,7 @@ function ToDo() {
           onClick={() => {
             SetState("Completed");
           }}
-          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3.5 sm:px-4 py-1 rounded-full ${
             state == "Completed" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
@@ -157,7 +157,7 @@ function ToDo() {
           onClick={() => {
             SetState("AllTasks");
           }}
-          className={`font-bold text-xl px-3 sm:px-4 py-1 rounded-full ${
+          className={`font-bold text-xl px-3.5 sm:px-4 py-1 rounded-full ${
             state == "AllTasks" ? "bg-[#d2ff02] text-black" : "text-white"
           } `}
         >
