@@ -8,7 +8,7 @@ function Clock() {
   const currentTime = `${time.hours}:${time.minute}:${time.seconds}`;
   return (
     <div
-      className={`flex flex-col gap-6   bg-[#9e67fd] py-10 px-8 sm:p-10 sm:pt-12 sm:pb-8 rounded-lg  justify-between w-full`}
+      className={`flex flex-col gap-6   bg-[#9e67fd] py-10 px-8 sm:p-10 sm:pt-12 sm:pb-8 rounded-3xl sm:rounded-lg  justify-between w-full`}
     >
       <h1 className="pb-2 font-extrabold text-2xl text-white">TIMER</h1>
       {time.active ? (
