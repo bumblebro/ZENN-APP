@@ -39,7 +39,7 @@ function AmbientCard() {
   };
 
   return (
-    <div className="flex flex-col   bg-[#d2ff02]  p-10  rounded-lg  justify-around w-full">
+    <div className="flex flex-col   bg-[#d2ff02] py-10 px-6 sm:p-10  rounded-lg  justify-around w-full">
       <h1 className="pb-8 font-extrabold text-xl ">AMBIENT MUSIC</h1>
       <div className="flex flex-col gap-16">
         <div className="flex gap-20">
