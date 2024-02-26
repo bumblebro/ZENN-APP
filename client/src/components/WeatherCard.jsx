@@ -64,7 +64,7 @@ function WeatherCard() {
         <h1 className="font-extralight">
           {currentLocation.city}, {currentLocation.state}
         </h1>
-        <div className="flex sm:flex-row flex-col gap-2 sm:gap-4">
+        <div className="flex flex-row  gap-4">
           <h1>{currentTime.time}</h1> <h1>{currentTime.date}</h1>
         </div>
       </div>

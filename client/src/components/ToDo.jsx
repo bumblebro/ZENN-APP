@@ -132,7 +132,7 @@ function ToDo() {
   return (
     <div className=" flex flex-col gap-6 bg-black border-solid border-[#1f1f1f] border-4 rounded-3xl  px-3 hover:shadow-2xl hover:shadow-[#d1ff02] hover:shadow-inner">
       <h1 className="text-2xl font-extrabold text-white pl-4 pt-4">My Tasks</h1>
-      <div className="flex justify-start pl-3">
+      <div className="pl-3">
         <button
           onClick={() => {
             SetState("Active");
