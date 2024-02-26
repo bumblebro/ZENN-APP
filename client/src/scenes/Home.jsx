@@ -6,7 +6,7 @@ import WeatherCard from "../components/WeatherCard.jsx";
 
 function Home() {
   return (
-    <div className=" bg-[#000000] flex px-6  gap-3 flex-col">
+    <div className=" bg-[#000000] flex px-2 pb-4 sm:px-6  gap-3 flex-col">
       <div className="flex items-center gap-2">
         <div className="text-white text-3xl font-extrabold pt-4 pb-1 pl-1">
           ZenApp{" "}
