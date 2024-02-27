@@ -313,7 +313,7 @@ function ToDo() {
               key={e.name}
               className="flex flex-row justify-between w-full pl-3 mx-auto gap-3 items-center"
             >
-              <div className="w-full h-12 flex items-center text-white pl-6 bg-[#1f1f1f] rounded-md px-2 py-1">
+              <div className="w-full h-auto flex items-center text-white pl-6 bg-[#1f1f1f] rounded-md px-2 py-1 overflow-auto no-scrollbar">
                 {e.name}
               </div>{" "}
               <div className="flex gap-8">
