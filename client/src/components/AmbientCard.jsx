@@ -52,7 +52,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/rain.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Frain.mp3"
+                );
                 SetActive("rain");
               }}
             >
@@ -76,7 +78,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/rain.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Frain.mp3"
+                );
                 SetActive("rain");
               }}
             >
@@ -92,7 +96,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/fire.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Ffire.mp3"
+                );
                 SetActive("fire");
               }}
             >
@@ -116,7 +122,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/fire.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Ffire.mp3"
+                );
                 SetActive("fire");
               }}
             >
@@ -132,7 +140,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/ocean.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Focean.mp3"
+                );
                 SetActive("ocean");
               }}
             >
@@ -156,7 +166,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/ocean.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Focean.mp3"
+                );
                 SetActive("ocean");
               }}
             >
@@ -175,7 +187,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3"
+                );
                 SetActive("birds");
               }}
             >
@@ -199,7 +213,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3"
+                );
                 SetActive("birds");
               }}
             >
@@ -215,7 +231,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/windchime.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fwindchime.mp3"
+                );
                 SetActive("bells");
               }}
             >
@@ -239,7 +257,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/windchime.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fwindchime.mp3"
+                );
                 SetActive("bells");
               }}
             >
@@ -255,7 +275,9 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/insects.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Finsects.mp3"
+                );
                 SetActive("leaf");
               }}
             >
@@ -279,7 +301,9 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/insects.mp3");
+                handleSVGClick(
+                  "https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Finsects.mp3"
+                );
                 SetActive("leaf");
               }}
             >
