@@ -175,7 +175,7 @@ function AmbientCard() {
               viewBox="0 0 256 256"
               style={{ animation: "blink 3s ease-in-out infinite" }}
               onClick={() => {
-                handleSVGClick("src/assets/audios/birds.mp3");
+                handleSVGClick("https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3");
                 SetActive("birds");
               }}
             >
@@ -199,7 +199,7 @@ function AmbientCard() {
               fill="#000000"
               viewBox="0 0 256 256"
               onClick={() => {
-                handleSVGClick("src/assets/audios/birds.mp3");
+                handleSVGClick("https://pub-c457fc1f95ed46ceb847cb8ca36f3a5b.r2.dev/audios%2Fbirds.mp3");
                 SetActive("birds");
               }}
             >

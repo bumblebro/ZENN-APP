@@ -10,7 +10,7 @@ function Home() {
       <div className="flex items-center gap-2">
         <div className="text-white text-3xl font-extrabold pt-4 pb-1 pl-1">
           Zen-App
-        </div>{" "}
+        </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="32"
