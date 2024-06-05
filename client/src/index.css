@@ -1,6 +1,7 @@
 @font-face {
   font-family: dottedfont;
   src: url("src/assets/fonts/Unibody.ttf");
+  
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
@@ -16,6 +17,7 @@ body {
 body {
   /* font-family: "dottedfont", sans-serif; */
   font-family: "Poppins", sans-serif;
+  background-color: "#000000"
 }
 
 @layer utilities {
